@@ -52,9 +52,9 @@ public class NumberProcessor
 	/**
 	 * Calculates n-th triangle number t by formula t = ½n(n+1);
 	 */
-	public<T extends Number> long triangleNumber(T n)
+	public int triangleNumber(int n)
 	{
-		return (n.longValue() * (n.longValue() + 1))/2;
+		return (n * (n + 1))/2;
 	}
 
 
