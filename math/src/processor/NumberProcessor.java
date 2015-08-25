@@ -14,6 +14,30 @@ import java.util.*;
 public class NumberProcessor
 {
 	/**
+	 * Decomposing a number into a prime and a double of a square.
+	 */
+	public boolean attemptGoldbachDecomposition(int number)
+	{
+		boolean returnValue = false;
+		int root = 1;
+		int doubleSquare = 2 * root * root;
+
+		do
+		{
+			if (this.isPrime(number - (doubleSquare)))
+			{
+				returnValue = true;
+			}
+
+			root ++;
+			doubleSquare = 2 * root * root;
+		}
+		while (doubleSquare < number && !returnValue);
+
+		return returnValue;
+	}
+
+	/**
 	 * H(n)=n(2n−1)
 	 */
 	public int hexagonalNumber(int n)
