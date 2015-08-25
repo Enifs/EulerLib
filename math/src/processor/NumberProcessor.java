@@ -21,6 +21,17 @@ public class NumberProcessor
 		return n *(2*n - 1);
 	}
 
+	/**
+	 * H(n)=n(2n−1)
+	 */
+	public BigInteger hexagonalNumber(BigInteger n)
+	{
+		BigInteger result = n.multiply(new BigInteger("2"));
+		result = result.subtract(new BigInteger("1"));
+		result = result.multiply(new BigInteger(n + ""));
+
+		return result;
+	}
 
 	/**
 	 * P(n)=n(3n−1)/2
@@ -33,11 +44,11 @@ public class NumberProcessor
 	/**
 	 * Tells if the given integer is a triangle number.
 	 */
-	public boolean isPentagonalNumber(int n)
+	public<T extends Number> boolean isPentagonalNumber(T n)
 	{
 		boolean returnValue = false;
 
-		QuadraticEquation equation = new QuadraticEquation(3, -1, -(2*n));
+		QuadraticEquation equation = new QuadraticEquation(3, -1, -(2*n.doubleValue()));
 
 		double positiveRoot = Math.max(equation.roo1(), equation.roo2());
 
@@ -48,6 +59,7 @@ public class NumberProcessor
 
 		return returnValue;
 	}
+
 
 	/**
 	 * Calculates n-th triangle number t by formula t = ½n(n+1);
@@ -61,11 +73,11 @@ public class NumberProcessor
 	/**
 	 * Tells if the given integer is a triangle number.
 	 */
-	public boolean isTriangleNumber(int n)
+	public<T extends Number> boolean isTriangleNumber(T n)
 	{
 		boolean returnValue = false;
 
-		QuadraticEquation equation = new QuadraticEquation(1, 1, -(2*n));
+		QuadraticEquation equation = new QuadraticEquation(1, 1, -(2*n.doubleValue()));
 
 		double positiveRoot = Math.max(equation.roo1(), equation.roo2());
 
@@ -76,6 +88,7 @@ public class NumberProcessor
 
 		return returnValue;
 	}
+
 
 	/**
 	 * Checks if given integer is a square of another integer
